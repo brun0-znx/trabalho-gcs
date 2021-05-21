@@ -113,4 +113,43 @@ public class Sistema {
         }
 
     }
+
+    public void busca2(){
+        Scanner teclado = new Scanner(System.in);
+        String search;
+        int search2;
+
+        System.out.println("[1] Busca por nome do paciente");
+        System.out.println("[2] Busca por tipo de exame");
+        int op = teclado.nextInt();
+
+        switch (op){
+            case 1:
+                System.out.println("Informe o nome do paciente");
+                search = teclado.next();
+                for(Autorizacao att1 : att){
+                    if(search.equals(att1.getPaciente().getNome())){
+                        organizaAtt();
+                        System.out.println(att1.toString());
+                    }
+                    else{
+                        System.out.println("Nenhum paciente encontrado com este nome!");
+                        break;
+                    }
+                }
+            case 2:
+                mostraExames();
+                System.out.println("Informe o id do exame:");
+                search2 = teclado.nextInt();
+                for(Autorizacao att1 : att){
+                    if(search2==att1.getExame().getId()){
+                        organizaAtt();
+                        System.out.println(att1.toString());
+                    }
+                }
+            default:
+                System.out.println("Opção inválida!");
+                break;
+        }
+    }
 }
