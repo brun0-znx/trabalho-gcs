@@ -53,4 +53,22 @@ public class Sistema {
         System.out.println(("Paciente cadastrado!"));
     }
 
+    public void cadastraAdmin(){
+        Scanner teclado = new Scanner(System.in);
+        int id;
+        String nome;
+
+        System.out.println("Informe o ID do Administrador:");
+        id = teclado.nextInt();
+        System.out.println("Informe o nome do Administrador");
+        nome = teclado.next();
+
+        Admin admin1 = new Admin(id,nome);
+        setAdmins(admin1);
+    }
+
+    public void setAdmins(Admin umAdmin){
+        admins.add(umAdmin);
+        System.out.println("Administrador cadastrado!");
+    }
 }
