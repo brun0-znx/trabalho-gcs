@@ -152,4 +152,10 @@ public class Sistema {
                 break;
         }
     }
+
+    public void setAutorizacao(Autorizacao umaAutorizacao){
+        att.add(umaAutorizacao);
+        System.out.println("Autorização cadastrada!");
+
+    }
 }
