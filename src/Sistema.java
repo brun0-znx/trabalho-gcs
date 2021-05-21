@@ -71,4 +71,46 @@ public class Sistema {
         admins.add(umAdmin);
         System.out.println("Administrador cadastrado!");
     }
+
+    public void novaAutorizacao(){
+        contSequencial++;
+        Scanner teclado = new Scanner(System.in);
+
+        System.out.println("Informe a data de cadastro:");
+        String data = teclado.next();
+        System.out.println("Informe o ID do médico: ");
+        mostraMedicos();
+        int idMedico = teclado.nextInt();
+        System.out.println("Informe o ID do paciente: ");
+        mostraPacientes();
+        int idPaciente = teclado.nextInt();
+        System.out.println("Informe o ID do exame: ");
+        mostraExames();
+        int idExame = teclado.nextInt();
+
+        for(Medico medico1 : medicos){
+            if(idMedico==medico1.getId()){
+                for(Paciente paciente1 : pacientes){
+                    if(idPaciente==paciente1.getId()){
+                        for(Exame exame1 : exames){
+                            if(idExame==exame1.getId()){
+                                Autorizacao att1 = new Autorizacao(contSequencial,data,medico1,paciente1,exame1);
+                                setAutorizacao(att1);
+                            }
+                            else{
+                                System.out.println("Exame não encontrado!");
+                            }
+                        }
+                    }
+                    else{
+                        System.out.println("Paciente não encontrado!");
+                    }
+                }
+            }
+            else{
+                System.out.println("Médico não encontrado!");
+            }
+        }
+
+    }
 }
