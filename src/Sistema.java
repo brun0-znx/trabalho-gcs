@@ -11,4 +11,64 @@ public class Sistema {
     public Sistema() {
 
     }
+    /*
+    Funções de administrador
+     */
+    public void cadastraMédico(){
+        Scanner teclado = new Scanner(System.in);
+        int id;
+        String nome;
+
+        System.out.println("Informe o ID do médico: \n");
+        id = teclado.nextInt();
+
+        System.out.println("Informe o nome do médico: \n");
+        nome = teclado.next();
+
+        Medico medico1 = new Medico(id,nome);
+        setMedicos(medico1);
+    }
+
+    public void setMedicos(Medico umMedico) {
+        medicos.add(umMedico);
+        System.out.println("Médico cadastrado!");
+    }
+
+    public void cadastraPaciente(){
+        Scanner teclado = new Scanner(System.in);
+        int id;
+        String nome;
+
+        System.out.println("Informe o ID do paciente: \n");
+        id = teclado.nextInt();
+        System.out.println("Informe o nome do paciente: \n");
+        nome = teclado.next();
+
+        Paciente paciente1 = new Paciente(id,nome);
+        setPacientes(paciente1);
+    }
+
+    public void setPacientes(Paciente umPaciente){
+        pacientes.add(umPaciente);
+        System.out.println(("Paciente cadastrado!"));
+    }
+
+    public void cadastraAdmin(){
+        Scanner teclado = new Scanner(System.in);
+        int id;
+        String nome;
+
+        System.out.println("Informe o ID do Administrador:");
+        id = teclado.nextInt();
+        System.out.println("Informe o nome do Administrador");
+        nome = teclado.next();
+
+        Admin admin1 = new Admin(id,nome);
+        setAdmins(admin1);
+    }
+
+    public void setAdmins(Admin umAdmin){
+        admins.add(umAdmin);
+        System.out.println("Administrador cadastrado!");
+    }
 }
