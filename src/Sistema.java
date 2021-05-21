@@ -72,6 +72,16 @@ public class Sistema {
         System.out.println("Administrador cadastrado!");
     }
 
+    public void estatisticas(){
+        //a) Número de médicos ###
+        System.out.println("Número de médicos: " + medicos.size());
+        //b) Número de pacientes ###
+        System.out.println("Número de pacientes: " + pacientes.size());
+        //c) Número de autorizações emitidas
+        System.out.println("Número de autorizaçoes emitidas: " + att.size());
+        //d) Percentual de autorizações com exames já realizados
+        //-
+
     public void novaAutorizacao(){
         contSequencial++;
         Scanner teclado = new Scanner(System.in);
