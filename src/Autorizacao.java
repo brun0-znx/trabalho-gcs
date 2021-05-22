@@ -1,19 +1,23 @@
 public class Autorizacao {
 
     int idSequencial;
-    String data;
+    String data,dataRealizacao;
     Medico medico;
     Paciente paciente;
     Exame exame;
 
-    public Autorizacao(int umIdSequencial, String umaData, Medico umMedico, Paciente umPaciente, Exame umExame){
+    public Autorizacao(int umIdSequencial, String umaData, String umaDataRealizacao, Medico umMedico, Paciente umPaciente, Exame umExame){
         this.idSequencial = umIdSequencial;
         this.data = umaData;
         this.medico = umMedico;
         this.paciente = umPaciente;
         this.exame = umExame;
+        this.dataRealizacao = umaDataRealizacao;
     }
 
+    public String getDataRealizacao(){
+        return getDataRealizacao();
+    }
     public String getData(){
         return data;
     }
@@ -27,6 +31,10 @@ public class Autorizacao {
 
     public Exame getExame(){
         return exame;
+    }
+
+    public void setDataRealizacao(String dataRealizacao) {
+        this.dataRealizacao = dataRealizacao;
     }
 
     @Override
